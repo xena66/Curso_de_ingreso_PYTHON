@@ -5,7 +5,7 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 
-'''
+'''yanina osorio
 Una agencia de viajes cobra $15.000 por cada estadía como base. 
 Luego para calcular las tarifas total realiza el siguiente cálculo, 
 en función de la estación del año y del destino elegido:
@@ -53,28 +53,27 @@ class App(customtkinter.CTk):
     
     def btn_informar_on_click(self):
         precio= 15000
-        estacion = self.combobox_estaciones
-        destino= self.combobox_destino
-        #porcentaje = 1
+        estacion = self.combobox_estaciones.get()
+        destino= self.combobox_destino.get()
+        porcentaje = 1
 
         match estacion:
             case "Invierno":
                 match destino:
                     case "Bariloche":
                         porcentaje = 1.20 
-                        # aumento 20%
-                    case "Cataratas":
-                        pass
+                    case "Cataratas" | "Cordoba":
+                        porcentaje = 1.1
                     case "Mar del plata":
-                        pass
+                        porcentaje = 1.2
             case "Verano":
                 match destino:
                     case "Bariloche":
-                        pass
-                    case "Cataratas":
-                        pass
+                        porcentaje = 0.8
+                    case "Cataratas" | "Cordoba":
+                        porcentaje = 1.1
                     case "Mar del plata":
-                        pass
+                        porcentaje = 1.2
             case "Primavera" | "Otoño":
                 match destino:
                     case "Bariloche" | "Cataratas" | "Mar del plata":

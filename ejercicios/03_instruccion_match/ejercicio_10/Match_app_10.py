@@ -3,7 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
-
+#yanina osorio
 
 '''
 Una agencia de viajes nos pide informar si hacemos viajes a lugares según la estación del año. 
@@ -42,7 +42,39 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estaciones = self.combobox_estaciones.get()
+        destinos = self.combobox_destino.get()
+        mensaje = " "
+
+        match  estaciones:
+            case "Invierno":
+                match destinos:
+                    case "Bariloche":
+                        mensaje = "Se viaja"
+                    case _:
+                        mensaje = "No se viaja"
+            case "Verano":
+                match destinos:
+                    case "Mar del plata" | "Cataratas":
+                        mensaje = "Se viaja"
+                    case _:
+                        mensaje = "No se viaja"
+            case "Primavera":
+                match destinos:
+                    case "Bariloche":
+                        mensaje = "No se viaja"
+                    case _:
+                        mensaje = "Se viaja"
+            case "Otoño":
+                mensaje = "Se viaja"
+  
+
+        alert(title=" ",message=mensaje)               
+                
+          
+
+
+
             
     
 if __name__ == "__main__":
