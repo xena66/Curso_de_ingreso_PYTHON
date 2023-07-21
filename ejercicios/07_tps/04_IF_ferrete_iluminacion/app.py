@@ -39,40 +39,43 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        PRECIO=800
-        mensaje="total a pagar es {0}"
-
-        cantidad= self.combobox_cantidad.get()
-        cantidad_numero=int(cantidad)
+        precio=800
+        mensaje="total a pagar es"
         marca= self.combobox_marca.get()
-        porcentaje = 0
+        cantidad= self.combobox_cantidad.get()
+        cantidad_numero= cantidad
+        porcentaje = 1
 
-        match cantidad_numero:
-            case "6":
-                porcentaje = 0.5
-            case "5":
-                match marca:
-                    case "ArgentinaLuz":
+        match marca:
+            case "ArgentinaLuz":
+                match cantidad_numero:
+                    case "5":
                         porcentaje = 0.4
-                    case _:
-                        porcentaje = 0.3
-            case "4":
-                match marca:
-                    case "ArgentinaLuz" | "FelipeLamparas":
+                    case "4":
                         porcentaje = 0.25
-                    case _:
-                        porcentaje = 0.2
-            case "3":
-                match marca:
-                    case "ArgentinaLuz":
+                    case "3":
                         porcentaje = 0.15
-                    case "FelipeLamparas":
-                        porcentaje = 0.1
-                    case _:
+            case "FelipeLamparas":
+                match cantidad_numero:
+                    case "5":
+                        porcentaje = 0.30
+                    case "4":
+                        porcentaje = 0.25
+                    case "3":
+                        porcentaje = 0.10
+            case "JeLuz" | "HazIluminacion" | "Osram":
+                match cantidad_numero:
+                    case "5":
+                        porcentaje = 0.30
+                    case "4":
+                        porcentaje = 0.20
+                    case "3":
                         porcentaje = 0.05
-        precio_descuento = ((PRECIO * cantidad_numero) * porcentaje)
+        
+        
+        precio_total = ((precio*cantidad_numero)*porcentaje)
+        alert(mensaje,precio_total)
        
-        alert(title=mensaje,message=precio_descuento)
         
     
 if __name__ == "__main__":

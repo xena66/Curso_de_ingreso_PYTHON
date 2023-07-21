@@ -33,7 +33,29 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        acu_negativo = 0
+        acu_positivo = 0
+        contador_positivo = 0
+        contador_negativo = 0
+        dif_pos_nega = 0
+        ceros = 0
+
+        while True:
+            numero = prompt(" ","Ingrese un numero")
+            if numero == None:
+                break
+            numero=int(numero)
+            if numero > 0:
+                contador_positivo += 1
+                acu_positivo += numero
+            elif numero < 0:
+                contador_negativo += 1
+                acu_negativo += numero
+            else: ceros += 1
+        dif_pos_nega = contador_positivo - contador_negativo
+        alert("Resumen","Se ingresaron {0} numeros positivos, {1} numeros negativos y {2} vez/ces 0. La suma de los positivos es {3} y la suma de los negativos es {4}. La diferencia de ambos es {5} ".format(contador_positivo,contador_negativo,ceros,acu_positivo,acu_negativo,dif_pos_nega))
+
+
 
     
 if __name__ == "__main__":

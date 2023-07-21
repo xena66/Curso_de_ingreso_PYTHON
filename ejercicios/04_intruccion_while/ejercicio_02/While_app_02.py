@@ -24,8 +24,8 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        ingreso=11
-        while ingreso >= 1 and ingreso < 12:
+        ingreso=10
+        while ingreso >= 1 and ingreso < 11:
             ingreso -= 1
             alert("numero",ingreso)
     
