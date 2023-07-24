@@ -37,7 +37,7 @@ class App(customtkinter.CTk):
         acu_positivo = 0
         contador_positivo = 0
         contador_negativo = 0
-        dif_pos_nega = 0
+
         ceros = 0
 
         while True:
@@ -52,8 +52,8 @@ class App(customtkinter.CTk):
                 contador_negativo += 1
                 acu_negativo += numero
             else: ceros += 1
-        dif_pos_nega = contador_positivo - contador_negativo
-        alert("Resumen","Se ingresaron {0} numeros positivos, {1} numeros negativos y {2} vez/ces 0. La suma de los positivos es {3} y la suma de los negativos es {4}. La diferencia de ambos es {5} ".format(contador_positivo,contador_negativo,ceros,acu_positivo,acu_negativo,dif_pos_nega))
+        diferencia_positivo_negativo = (acu_positivo - (acu_negativo))
+        alert("Resumen","Se ingresaron {0} numero/s positivos, {1} numero/s negativos y {2} vez/ces 0. La suma de los positivos es {3} y la suma de los negativos es {4}. La diferencia de ambos es {5} ".format(contador_positivo,contador_negativo,ceros,acu_positivo,acu_negativo,diferencia_positivo_negativo))
 
 
 

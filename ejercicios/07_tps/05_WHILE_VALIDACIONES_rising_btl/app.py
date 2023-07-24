@@ -50,34 +50,40 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        
-        apellio = self.txt_apellido.get()
-        edad = self.txt_edad.get()
-        estadocivil = self.combobox_tipo.get()
-        legajo = self.txt_legajo.get()
-
-        while not apellio.isalpha():
-            pregunta=prompt(" "," Ingrese un apellido valido")
-            if edad <=18 and edad >= 90:
-                pregunta=prompt(" ","Ingrese una edad valida")
-            elif not legajo.isdigit()
-
-
-
-
-
-
-
-
     
+        
+        while True:
+            pregunta = prompt("pregunta","¿quiere cargar sus datos?")
+            if pregunta == None or pregunta =="no":
+                break
+            apellido = prompt(" ","ingrese un apellido")
+            while(apellido.isdigit()):
+                apellido = prompt(" ","reingrese el apellido correctamente")
+            edad = prompt(" ","ingrese su edad")
+            while(edad.isalpha()):
+                edad = int(prompt(" ","reingrese la edad correctamente"))
+                if edad >= 18 or edad <= 90:
+                    edad = int(prompt(" ","reingrese la edad correctamente"))
+            legajo = prompt(" ","ingrese su legajo")
+            while(legajo.isalpha()):
+                legajo = int(prompt(" ","reeingrese su legajo correctamente"))
+                if legajo <= 1000 or legajo >= 999:
+                    legajo = int(prompt(" ","Ingrese un legajo valido"))
+            break
+             
+        self.txt_apellido.delete(0,100)
+        self.txt_apellido.insert(0,apellido)
+        self.txt_edad.delete(0,100)
+        self.txt_edad.insert(0,edad)
+        self.txt_legajo.delete(0,100)
+        self.txt_legajo.insert(0,legajo)
 
 
-
-
-        #edad
-        #estado civil
-        #numero de legajo
-
+        
+        
+        
+        
+       
 
 
 if __name__ == "__main__":
