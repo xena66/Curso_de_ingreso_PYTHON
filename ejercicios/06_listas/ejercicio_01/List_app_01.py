@@ -26,8 +26,11 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
 
         self.lista_datos
-        for lista in self.lista_datos:
-            alert("informe")
+        for numero in self.lista_datos:
+            alert("informe",numero)
+        
+
+        
         
         
     

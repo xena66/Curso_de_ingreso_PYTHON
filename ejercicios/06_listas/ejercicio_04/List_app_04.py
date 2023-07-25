@@ -24,7 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        numero_minimo=self.lista_datos [0]
+        for contador in (self.lista_datos):
+            if contador < numero_minimo:
+                numero_minimo = contador
+        alert("atencion",numero_minimo)
     
     
 if __name__ == "__main__":

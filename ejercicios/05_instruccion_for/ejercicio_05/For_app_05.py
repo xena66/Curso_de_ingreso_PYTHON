@@ -22,11 +22,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        i = 0
         
-        while question == None:
-            break
-        for pregunta in range(True,1):
-           question(" ","¿desea continuar?")
+        for i in range(0,1000,1):
+            pregunta = question(" ","¿desea continuar?")
+            while pregunta == None or pregunta == False:
+                break
+        
+            
+
+           
+        
+        
+        
+
+
            
 
         

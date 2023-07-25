@@ -24,7 +24,14 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        numero=self.lista_datos[0]
+        acumulador = 0
+
+        for numero in (self.lista_datos):
+            acumulador += numero
+        alert("la suma es:",acumulador)
+
+
     
 if __name__ == "__main__":
     app = App()
