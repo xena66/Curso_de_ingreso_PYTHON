@@ -77,6 +77,7 @@ class App(customtkinter.CTk):
         self.txt_edad.insert(0,edad)
         self.txt_legajo.delete(0,100)
         self.txt_legajo.insert(0,legajo)
+        #self.combobox_tipo.set(estado_civil)
 
 
         

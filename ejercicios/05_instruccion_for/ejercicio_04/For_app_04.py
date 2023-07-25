@@ -21,13 +21,19 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        valores=prompt(" ","Ingrese un valor")
-        while valores == 9:
+        pregunta = prompt(" ","ingrese un numero")
+        pregunta_int = int(pregunta)
+        while pregunta_int == 9:
             break
+        for i in range(0,pregunta_int,1):
+            pregunta_2 = prompt(" ","ingrese un numero")
+            
 
-        valores_int=int(valores)
-        for valores in range(0,valores_int,1):
-            alert(" ","Hola UTN FRA")
+
+    
+
+        
+        
     
         
     
